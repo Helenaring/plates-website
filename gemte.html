@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PLATES – Gemte opskrifter</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Ekstra layout til selve opskriften */
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      h1.title {
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      p.sub {
+        text-align: center;
+        color: #7b776e;
+        margin-bottom: 2rem;
+      }
+
+      .recipe-head {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 2rem;
+        align-items: end;
+      }
+
+      .rule {
+        border: 0;
+        border-top: 1px solid #cfc8b7;
+        margin: 0.6rem 0 1rem;
+      }
+
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 2rem;
+      }
+
+      /* Ingrediensliste */
+      .ing-group + .ing-group {
+        margin-top: 1.2rem;
+      }
+
+      .ing-group h3 {
+        margin: 0.2rem 0 0.3rem;
+      }
+
+      .ing-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.35rem;
+      }
+
+      .ing-item {
+        display: grid;
+        grid-template-columns: 1fr 60px 44px;
+        align-items: center;
+        padding: 0.25rem 0.5rem;
+        border-radius: 8px;
+      }
+
+      .ing-name {
+        font-variant: small-caps;
+        letter-spacing: 0.06em;
+        color: #6c645a;
+      }
+
+      .ing-qty {
+        font-size: 0.85rem;
+        color: #8a867f;
+      }
+
+      /* Switch design */
+      .switch {
+        position: relative;
+        width: 38px;
+        height: 20px;
+        display: inline-block;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        inset: 0;
+        background: #e1ddd2;
+        border: 1px solid #c6c1b6;
+        border-radius: 999px;
+        transition: 0.2s;
+      }
+
+      .slider:before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid #c1bcb0;
+        transition: transform 0.2s;
+      }
+
+      .switch input:checked + .slider {
+        background: #a6b6bf;
+        border-color: #96aab4;
+      }
+
+      .switch input:checked + .slider:before {
+        transform: translateX(18px);
+      }
+
+      .checked .ing-name,
+      .checked .ing-qty {
+        opacity: 0.55;
+        text-decoration: line-through;
+      }
+
+      /* Fremgangsmåde */
+      .method h4 {
+        margin: 0.2rem 0 0.4rem;
+      }
+
+      .method p {
+        margin: 0 0 0.7rem;
+        line-height: 1.55;
+      }
+
+      /* Responsiv */
+      @media (max-width: 800px) {
+        .recipe-head,
+        .recipe-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER – samme som dine andre sider -->
+    <header class="header">
+      <a href="index.html" class="logo">
+        <img src="imgs/logo.png" alt="PLATES" />
+        <br />
+        <h1>P L A T E S</h1>
+      </a>
+
+      <nav class="nav">
+        <a class="btn" href="opskrifter.html">Opskrifter</a>
+        <a class="btn" href="info.html">Info</a>
+        <a class="btn active" href="gemte.html">Gemte</a>
+      </nav>
+    </header>
+
+    <!-- INDHOLD -->
+    <main class="wrap">
+      <h1 class="title">Gemte opskrifter</h1>
+      <p class="sub">Din gemte opskrift: French Toast</p>
+
+      <section class="recipe">
+        <div class="recipe-head">
+          <h2>Ingredienser</h2>
+          <h2>Fremgangsmåde</h2>
+        </div>
+        <hr class="rule" />
+
+        <div class="recipe-grid">
+          <!-- VENSTRE: ingredienser -->
+          <aside>
+            <section class="ing-group">
+              <h3>Blaabaerkompot</h3>
+              <ul class="ing-list">
+                <li class="ing-item">
+                  <span class="ing-name">Blåbær</span>
+                  <span class="ing-qty">150 g</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+                <li class="ing-item">
+                  <span class="ing-name">Sukker</span>
+                  <span class="ing-qty">1 spsk</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+                <li class="ing-item">
+                  <span class="ing-name">Vanilje</span>
+                  <span class="ing-qty">1 tsk</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="ing-group">
+              <h3>French Toast</h3>
+              <ul class="ing-list">
+                <li class="ing-item">
+                  <span class="ing-name">Æg</span>
+                  <span class="ing-qty">2 stk</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+                <li class="ing-item">
+                  <span class="ing-name">Mælk</span>
+                  <span class="ing-qty">1 dl</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+                <li class="ing-item">
+                  <span class="ing-name">Kanel</span>
+                  <span class="ing-qty">1 tsk</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+                <li class="ing-item">
+                  <span class="ing-name">Brød</span>
+                  <span class="ing-qty">4 skiver</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="ing-group">
+              <h3>Til servering</h3>
+              <ul class="ing-list">
+                <li class="ing-item">
+                  <span class="ing-name">Græsk yoghurt</span>
+                  <span class="ing-qty">2 spsk</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+                <li class="ing-item">
+                  <span class="ing-name">Ahornsirup</span>
+                  <span class="ing-qty">1 spsk</span>
+                  <label class="switch"><input type="checkbox" /><span class="slider"></span></label>
+                </li>
+              </ul>
+            </section>
+          </aside>
+
+          <!-- HØJRE: fremgangsmåde -->
+          <article class="method">
+            <h4>Blåbær kompot</h4>
+            <p>Kom blåbær, sukker og vanilje i en gryde og kog op.</p>
+            <p>Lad det simre i cirka 10 minutter uden låg. Køl af og hæld på et skoldet glas.</p>
+
+            <h4>French Toast</h4>
+            <p>Pisk æg, mælk, kanel og salt sammen i en skål.</p>
+            <p>Dyp brødskiverne i blandingen på begge sider, til de er let mættede.</p>
+            <p>Steg brødene på middelvarme i smør, til de er gyldne og sprøde.</p>
+
+            <h4>Servering</h4>
+            <p>Server toastene med en skefuld græsk yoghurt, blåbærkompot og lidt frisk frugt.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- Lidt JavaScript til at strege ingredienser ud -->
+    <script>
+      document.addEventListener("change", (e) => {
+        if (e.target.matches(".switch input[type='checkbox']")) {
+          e.target.closest(".ing-item").classList.toggle("checked", e.target.checked);
+        }
+      });
+    </script>
+  </body>
+</html>

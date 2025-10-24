@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PLATES – Opskrifter</title>
+    <link rel="icon" href="img/favicon-kopi.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <!-- Forsidelink: brug indeks.html med mindre din fil hedder noget andet -->
+      <a href="index.html" class="logo">
+        <img src="imgs/logo.png" alt="PLATES" />
+        <h1>P L A T E S</h1>
+      </a>
+      <nav class="nav">
+        <a class="btn" href="opskrifter.html">Opskrifter</a>
+        <a class="btn" href="info.html">Info</a>
+        <a class="btn" href="gemte.html">Gemte</a>
+      </nav>
+    </header>
+
+    <main class="section">
+      <!-- Intro-tekster til kategorier -->
+      <section class="section cats-intro">
+        <div class="cats-grid">
+          <article class="cat">
+            <h2>DE HURTIGE</h2>
+            <p>Til dig, der har travlt om morgenen. Her finder du lynopskrifter, du kan lave på 2–5 minutter – smoothies, toast eller yoghurt. Hurtigt, nemt og klar til at tage med.</p>
+          </article>
+
+          <article class="cat">
+            <h2>DE LANGSOMME</h2>
+            <p>Til dig, der har tid til at nyde morgenstunden. Hygge med brunch, pandekager eller french toast – perfekt til weekend og fridage.</p>
+          </article>
+
+          <article class="cat">
+            <h2>DE PREPPEDE</h2>
+            <p>Til dig, der gerne vil være foran. Forbered morgenmaden dagen før – overnight oats, frys-smoothies eller wraps.</p>
+          </article>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Galleri med eksempler -->
+      <section class="section cats-gallery">
+        <div class="cats-gallery-head">
+          <h3>HURTIGE</h3>
+          <h3>LANGSOMME</h3>
+          <h3>PREPPEDE</h3>
+        </div>
+
+        <div class="cats-gallery-grid">
+          <!-- RET filnavnene her så de matcher dine faktiske filer -->
+          <figure class="gal-card">
+            <img src="imgs/avoseng.webp" alt="Avocado mad" />
+            <!-- hvis filen i virkeligheden hedder avoo.webp, så skriv: img/avoo.webp -->
+            <figcaption>Avocado mad – 5 min</figcaption>
+          </figure>
+
+          <figure class="gal-card">
+            <img src="imgs/frenchtoast.webp" alt="French toast på tallerken" />
+            <figcaption>French toast – 30 min</figcaption>
+          </figure>
+
+          <figure class="gal-card">
+            <img src="imgs/havregrød.webp" alt="Havregrød" />
+            <figcaption>Havregrød m. brombær – 10 min</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Card 3 -->
+      <div class="card__body">
+        <h3><a href="recipe.html">SKYR MED KARAMELLISEREDE ABRIKOS</a></h3>
+      </div>
+      <article class="card">
+        <a href="recipe.html" class="card__imgwrap">
+          <img src="imgs/skyr-kopi.webp" alt="Skyr m. karamelliserede abrikos" />
+        </a>
+        <div>
+          <p class="meta">prep 5 min • klar i morgen</p>
+          <button class="heart-btn" data-id="French Toast" aria-label="Gem opskrift">🤎</button>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <p>FIND OS</p>
+      <div class="social">
+        <a class="btn" href="mailto:hello@plates.dk">Mail</a>
+        <a class="btn" href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a class="btn" href="https://www.facebook.com" target="_blank">Facebook</a>
+      </div>
+    </footer>
+  </body>
+</html>
